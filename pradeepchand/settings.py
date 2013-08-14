@@ -1,4 +1,5 @@
 # Django settings for pradeepchand project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -8,11 +9,13 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
+SITE_HOME = os.path.abspath(os.path.join(os.path.dirname(__file__), "..")) 
+
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/home/prad/projects/pradeepchand/sqlite.db',                      # Or path to database file if using sqlite3.
+        'NAME': os.path.join(SITE_HOME, 'sqlite.db'),                    # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
