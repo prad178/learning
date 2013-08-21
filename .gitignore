@@ -4,3 +4,4 @@ env/
 *.pot
 *.log
 .pydevproject
+.project
